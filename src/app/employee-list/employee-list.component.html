@@ -1,0 +1,28 @@
+<!-- <div *ngFor="let emp of employees">
+    {{emp.employeeId}} {{emp.employeeName}} {{emp.email}} {{emp.contactNumber}}
+
+</div> -->
+
+
+<table id="employees" class="flex-table">
+    <thead *ngIf="employees.length!=0" style="position: sticky; top: 0px; background-color: white; z-index: 1;">
+      <tr style="background-color: #9f9f9f;">
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Designation</th>
+        <th>Department</th>
+        <th>Email</th>
+        <th>Contact Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees">
+        <td>{{ emp.employeeId }}</td>
+        <td>{{ emp.employeeName }}</td>
+        <td>{{ emp.designation }}</td>
+        <td>{{ emp.department }}</td>
+        <td>{{ emp.email }}</td>
+        <td>{{ emp.contactNumber }}</td>
+      </tr>
+    </tbody>
+  </table>

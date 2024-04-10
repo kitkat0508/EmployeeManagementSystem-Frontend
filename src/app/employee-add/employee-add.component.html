@@ -1,0 +1,20 @@
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <label for="employeeName">Employee Name:</label>
+    <input type="text" formControlName="employeeName" required><br>
+    
+    <label for="designation">Designation:</label>
+    <input type="text" formControlName="designation" required><br>
+    
+    <label for="contactNumber">Contact Number:</label>
+    <input type="tel" formControlName="contactNumber" placeholder="9876543210" required>
+    <div *ngIf="!contactFlag && employeeForm.get('contactNumber').dirty" class="error-message">Contact Number already exists</div><br>
+    
+    <label for="email">Email:</label>
+    <input type="email" formControlName="email" required>
+    <div *ngIf="!emailFlag && employeeForm.get('email').dirty" class="error-message">Email already exists</div><br>
+  
+    <label for="department">Department:</label>
+    <input type="text" formControlName="department" required><br>
+    
+    <button type="submit" [disabled]="!emailFlag || !contactFlag || employeeForm.invalid">Add Employee</button>
+  </form>
