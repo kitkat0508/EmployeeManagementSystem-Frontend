@@ -1,8 +1,32 @@
 <h2>Employee Details</h2>
 
+<form [formGroup]="employeeDetails">
+  <label for="employeeId">Employee ID:</label>
+  <input type="number" [(ngModel)]="employeeIdField" formControlName="employeeId" placeholder="10" required>
+</form>
+<!-- 
 <div *ngIf="employee">
   <h3>{{ employee.employeeId }}</h3>
   <h4>{{ employee.employeeName }}</h4>
   <p>{{ employee.department }}</p>
   <p>{{ employee.designation }}</p>
-</div>
+</div> -->
+
+<table *ngIf="employee">
+  <tr>
+    <th>Employee ID:</th>
+    <td><input type="number" [(ngModel)]="employee.employeeId" [disabled]="true"></td>
+  </tr>
+  <tr>
+    <th>Employee Name:</th>
+    <td><input type="text" [(ngModel)]="employee.employeeName"></td>
+  </tr>
+  <tr>
+    <th>Department:</th>
+    <td><input type="text" [(ngModel)]="employee.department"></td>
+  </tr>
+  <tr>
+    <th>Designation:</th>
+    <td><input type="text" [(ngModel)]="employee.designation"></td>
+  </tr>
+</table>
