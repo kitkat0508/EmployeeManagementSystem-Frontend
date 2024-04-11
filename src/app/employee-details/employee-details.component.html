@@ -30,6 +30,14 @@
     <td><input type="text" [(ngModel)]="employee.designation"></td>
   </tr>
   <tr>
+    <th>Email:</th>
+    <td><input type="email" [(ngModel)]="employee.email" [disabled]="true"></td>
+  </tr>
+  <tr>
+    <th>Contact Number:</th>
+    <td><input type="tel" [(ngModel)]="employee.contactNumber" [disabled]="true"></td>
+  </tr>
+  <tr>
     <td colspan="2"><button (click)="updateEmployee()">Update</button></td>
   </tr>
 </table>
