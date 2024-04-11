@@ -3,6 +3,30 @@
 
 </div> -->
 
+<div>
+  <label for="filter">Filter By:</label>
+  <select id="filter" [(ngModel)]="selectedFilter" (change)="useFilter()">
+    <option value="all">All</option>
+    <option value="department">Department</option>
+    <option value="designation">Designation</option>
+  </select>
+
+  <div *ngIf="selectedFilter === 'department'">
+    <label for="departmentFilter">Select Department:</label>
+    <select id="departmentFilter" [(ngModel)]="filterValue" (change)="useFilter()">
+      <option value="">All Departments</option>
+      <option *ngFor="let department of departmentsList" [value]="department">{{ department }}</option>
+    </select>
+  </div>
+
+  <div *ngIf="selectedFilter === 'designation'">
+    <label for="designationFilter">Select Designation:</label>
+    <select id="designationFilter" [(ngModel)]="filterValue" (change)="useFilter()">
+      <option value="">All Designations</option>
+      <option *ngFor="let designation of designationList" [value]="designation">{{ designation }}</option>
+    </select>
+  </div>
+</div>
 
 <table id="employees" class="flex-table">
     <thead *ngIf="employees.length!=0" style="position: sticky; top: 0px; background-color: white; z-index: 1;">
@@ -16,7 +40,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let emp of employees">
+      <tr *ngFor="let emp of employeesFiltered">
         <td>{{ emp.employeeId }}</td>
         <td>{{ emp.employeeName }}</td>
         <td>{{ emp.designation }}</td>
