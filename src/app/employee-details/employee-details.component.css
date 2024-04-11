@@ -1,0 +1,86 @@
+:host {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100%; /* Ensure the component takes up the full height */
+    flex-direction: column;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  form {
+    margin: 10px;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="number"],
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"] {
+    width: calc(100% - 16px); /* Adjust as needed */
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th,
+  td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    text-align: left;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(107, 191, 219);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: rgb(50, 181, 224);
+  }
+  
+  button[disabled] {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+  }
+  
+  .ng-invalid {
+    border: 1px solid rgb(107, 201, 233);
+  }
+  
+  .error-message {
+    color: red;
+  }
+  
+  .error-message:focus-visible {
+    color: red;
+    font-weight: bold;
+  }

@@ -1,4 +1,4 @@
-tr{
+/* tr{
     border: 1px solid #f3f3f3;
 }
  
@@ -110,4 +110,97 @@ input{
  
 input:focus, input:hover{
   border-color: rgb(126, 151, 206);
+} */
+/* 
+:host {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
 }
+
+.table-container {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.flex-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; 
+
+.flex-table thead th {
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 2;
+}
+
+.flex-table th,
+.flex-table td {
+  padding: 18px 16px;
+  border: 1px solid #ccc;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+.flex-table tbody {
+  background-color: #f9f9f9;
+}
+
+@media (max-height: 600px) {
+  .table-container {
+    max-height: 100px; 
+}
+
+}
+ */
+
+
+ body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.container > div {
+  margin-bottom: 10px;
+}
+
+.table-container {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.flex-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.flex-table th,
+.flex-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  white-space: nowrap; /* Prevents wrapping of table cell content */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adds ellipsis (...) for overflowed content */
+}
+
+.flex-table thead th {
+  position: sticky;
+  top: 0;
+  background-color: #f9f9f9;
+}
+
+/* Optional: Adjust the height of the table container */
+@media (max-height: 600px) {
+  .table-container {
+    max-height: 400px; /* Set a fixed height for the table container */
+  }
+}
+

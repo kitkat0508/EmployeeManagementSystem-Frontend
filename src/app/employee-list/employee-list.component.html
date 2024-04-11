@@ -2,7 +2,7 @@
     {{emp.employeeId}} {{emp.employeeName}} {{emp.email}} {{emp.contactNumber}}
 
 </div> -->
-
+<!-- 
 <div>
   <label for="filter">Filter By:</label>
   <select id="filter" [(ngModel)]="selectedFilter" (change)="useFilter()">
@@ -49,4 +49,67 @@
         <td>{{ emp.contactNumber }}</td>
       </tr>
     </tbody>
-  </table>
+  </table> -->
+
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Details</title>
+</head>
+<body>
+  <div class="container">
+    <div>
+      <label for="filter">Filter By:</label>
+      <select id="filter" [(ngModel)]="selectedFilter" (change)="useFilter()">
+        <option value="all">All</option>
+        <option value="department">Department</option>
+        <option value="designation">Designation</option>
+      </select>
+  
+      <div *ngIf="selectedFilter === 'department'">
+        <label for="departmentFilter">Select Department:</label>
+        <select id="departmentFilter" [(ngModel)]="filterValue" (change)="useFilter()">
+          <option value=""></option>
+          <option *ngFor="let department of departmentsList" [value]="department">{{ department }}</option>
+        </select>
+      </div>
+  
+      <div *ngIf="selectedFilter === 'designation'">
+        <label for="designationFilter">Select Designation:</label>
+        <select id="designationFilter" [(ngModel)]="filterValue" (change)="useFilter()">
+          <option value=""></option>
+          <option *ngFor="let designation of designationList" [value]="designation">{{ designation }}</option>
+        </select>
+      </div>
+    </div>
+  
+    <div class="table-container">
+      <table class="flex-table">
+        <thead>
+          <tr>
+            <th>Employee Id</th>
+            <th>Employee Name</th>
+            <th>Designation</th>
+            <th>Department</th>
+            <th>Email</th>
+            <th>Contact Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of employeesFiltered">
+            <td>{{ emp.employeeId }}</td>
+            <td>{{ emp.employeeName }}</td>
+            <td>{{ emp.designation }}</td>
+            <td>{{ emp.department }}</td>
+            <td>{{ emp.email }}</td>
+            <td>{{ emp.contactNumber }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
