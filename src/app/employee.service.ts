@@ -46,4 +46,8 @@ export class EmployeeService {
   addEmployee(employee:Employee):Observable<Employee>{
     return this.http.post<Employee>(this.apiUrl+'/employee',employee);
   }
+
+  updateEmployee(employee:Employee):Observable<Employee>{
+    return this.http.put<Employee>(this.apiUrl+'/employee',employee);
+  }
 }

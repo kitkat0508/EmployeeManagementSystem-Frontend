@@ -1,7 +1,7 @@
 <h2>Employee Details</h2>
 
 <form [formGroup]="employeeDetails">
-  <label for="employeeId">Employee ID:</label>
+  <label for="employeeId">Enter Employee ID:</label>
   <input type="number" [(ngModel)]="employeeIdField" formControlName="employeeId" placeholder="10" required>
 </form>
 <!-- 
@@ -28,5 +28,8 @@
   <tr>
     <th>Designation:</th>
     <td><input type="text" [(ngModel)]="employee.designation"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><button (click)="updateEmployee()">Update</button></td>
   </tr>
 </table>

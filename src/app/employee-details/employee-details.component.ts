@@ -40,4 +40,18 @@ export class EmployeeDetailsComponent implements OnInit {
       )
   }
 
+  updateEmployee(){
+    if(!this.employee){
+      return;
+    }
+    this.employeeService.updateEmployee(this.employee).subscribe(
+      (value)=>{
+        console.log("Employee Updated",value);
+        this.employeeService.announceEmployeeAdded();
+      },
+      (error)=>console.log(error)
+    );
+    this.employeeDetails.reset();
+  }
+
 }
