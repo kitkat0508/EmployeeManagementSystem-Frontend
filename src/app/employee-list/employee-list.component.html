@@ -14,7 +14,7 @@
   <div *ngIf="selectedFilter === 'department'">
     <label for="departmentFilter">Select Department:</label>
     <select id="departmentFilter" [(ngModel)]="filterValue" (change)="useFilter()">
-      <option value="">All Departments</option>
+      <option value=""></option>
       <option *ngFor="let department of departmentsList" [value]="department">{{ department }}</option>
     </select>
   </div>
@@ -22,7 +22,7 @@
   <div *ngIf="selectedFilter === 'designation'">
     <label for="designationFilter">Select Designation:</label>
     <select id="designationFilter" [(ngModel)]="filterValue" (change)="useFilter()">
-      <option value="">All Designations</option>
+      <option value=""></option>
       <option *ngFor="let designation of designationList" [value]="designation">{{ designation }}</option>
     </select>
   </div>

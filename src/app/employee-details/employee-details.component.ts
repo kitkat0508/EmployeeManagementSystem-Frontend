@@ -9,15 +9,10 @@ import { Employee,employees } from '../model/Employee';
 })
 export class EmployeeDetailsComponent implements OnInit {
   employee: Employee | undefined;
-  constructor(private route:ActivatedRoute) { }
+  constructor() { }
 
   ngOnInit() {
-    const routeParams = this.route.snapshot.paramMap;
-    const employeeIdFromRoute = Number(routeParams.get('employeeId'));
-
-    this.employee = employees.find((employee)=>{
-      return employee.employeeId==employeeIdFromRoute;
-    });
+    
   }
 
 }
