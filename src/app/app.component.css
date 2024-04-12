@@ -81,15 +81,15 @@ html, body {
 }
 
 .green {
-  background-color: lightblue;
+  background-color: rgb(96, 200, 235);
 }
 
 .blue {
-  background-color: rgb(162, 210, 226);
+  background-color: rgb(96, 200, 235);
 }
 
 .brown {
-  background-color: rgb(141, 211, 235);
+  background-color: rgb(96, 200, 235);
 }
 
 @media (max-width: 768px) {
