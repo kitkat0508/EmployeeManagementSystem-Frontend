@@ -180,15 +180,16 @@ input:focus, input:hover{
 .flex-table {
   width: 100%;
   border-collapse: collapse;
+  z-index: 1;
 }
 
 .flex-table th,
 .flex-table td {
   padding: 10px;
   border: 1px solid #ccc;
-  white-space: nowrap; /* Prevents wrapping of table cell content */
+  white-space: nowrap; 
   overflow: hidden;
-  text-overflow: ellipsis; /* Adds ellipsis (...) for overflowed content */
+  text-overflow: ellipsis;
 }
 
 .flex-table thead th {
@@ -197,10 +198,9 @@ input:focus, input:hover{
   background-color: #f9f9f9;
 }
 
-/* Optional: Adjust the height of the table container */
 @media (max-height: 600px) {
   .table-container {
-    max-height: 400px; /* Set a fixed height for the table container */
+    max-height: 400px;
   }
 }
 

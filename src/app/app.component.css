@@ -55,6 +55,7 @@ html, body {
   align-items: stretch;
   height: 100%;
   flex-direction: column;
+  z-index: 1;
 }
 
 .card {
@@ -94,6 +95,7 @@ html, body {
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
+    z-index: 1;
   }
 
   .cont{
